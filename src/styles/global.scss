@@ -1,0 +1,92 @@
+$base-color: #c9558f;
+$color: rgba(black, 0.88);
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@300;500;700&display=swap");
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+
+h1{
+    font-family: 'DM Sans', sans-serif;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+body{
+    background-color: $base-color;
+    color: $color;
+    
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.mona_china{
+    width: 500px;
+    max-width: calc(100vw - 20px);
+}
+
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: none;
+    border-radius: 100px;
+    margin: 8vh 0;
+    background-color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+    width: 600px;
+    min-height: 100px;
+    max-width: calc(100vw - 20px);
+    box-shadow: 0 0 10px black;
+    transition: transform .5s, background-color .3s;
+}
+
+.button:hover{
+    transform: scale(1.1);
+}
+
+.button:active{
+    background-color: rgb(24, 122, 250);
+    color: white;
+    transform: scale(1);
+}
+
+.warning {
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: bold;
+    font-size: 5rem;
+    text-align: center;
+    padding: 0 10%;
+}
+
+@media only screen and (max-width: 600px) {
+    .button:hover{
+        transform: scale(1);
+    }
+    
+    .button:active{
+        transform: scale(0.9);
+    }
+
+    .warning {
+        color: white;
+        font-family: 'DM Sans', sans-serif;
+        font-weight: bold;
+        font-size: 3rem;
+        text-align: center;
+    }
+}
