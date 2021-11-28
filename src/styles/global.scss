@@ -1,6 +1,6 @@
 $base-color: white;
 $color: rgba(black, 0.88);
-$plant-green: rgb(0, 134, 0);
+$plant-green: rgb(0, 148, 0);
 
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@300;500;700&display=swap");
 
@@ -27,6 +27,10 @@ span {
     white-space: pre-wrap;
 }
 
+.Plantas{
+    display: none;
+}
+
 .Navbar{
     display: flex;
     align-items: center;
@@ -35,6 +39,10 @@ span {
 }
 
 .Navbar_button{
+    font-family: 'DM Sans', sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+    background-color: white;
 
     width: 600px;
     max-width: calc(15%);
@@ -48,10 +56,7 @@ span {
     box-shadow: 0 0 10px black;
     border: none;
     border-radius: 100px;
-    background-color: white;
-    font-family: 'DM Sans', sans-serif;
-    font-weight: bold;
-    font-size: 1.5rem;
+    
     transition: transform .5s, background-color .3s;
 }
 
@@ -67,32 +72,62 @@ span {
     transform: scale(1);
 }
 
-.warning {
-    color: white;
+.plantData{
+    padding: 3rem;
+}
+
+.plantData_title{
+    font-size: 3rem;
+}
+
+.plantData_list{
+    font-size: 1.25rem;
+}
+
+.loading {
     font-family: 'DM Sans', sans-serif;
     font-weight: bold;
     font-size: 5rem;
     text-align: center;
-    padding: 0 10%;
+    padding: 5rem 0;
 }
 
-@media only screen and (max-width: 890px) {
+@media only screen and (max-width: 1080px) {
+    .plantData_title{
+        font-family: 'DM Sans', sans-serif;
+        font-weight: bold;
+        font-size: 2rem;
+    }
+
+    .plantData_list{
+        font-size: 1rem;
+    }
+
+    .Plantas{
+        display: block;
+        padding-top: 1.5rem;
+        font-size: 3rem;
+        text-justify: center;
+        text-align: center;
+    }
     .Navbar_button span{
         display: none;
     }
     .Navbar_button:hover{
         transform: scale(1);
+        background-color: $plant-green;
+        color: white;
     }
     
     .Navbar_button:active{
+        background-color: $plant-green;
+        color: white;
         transform: scale(0.9);
     }
 
-    .warning {
-        color: white;
-        font-family: 'DM Sans', sans-serif;
-        font-weight: bold;
+    .loading {
         font-size: 3rem;
+        text-justify: center;
         text-align: center;
     }
 }

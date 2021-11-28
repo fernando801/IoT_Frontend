@@ -18,24 +18,25 @@ const PlantInfo = (props) => {
     };
   }, [props.activePlant]);
 
-  return(
-    <div>
-      
-      {plantData && plantData.id === props.activePlant
-      ?
-      [<img src="" alt="siu" />,
-      <h1>Planta {props.activePlant}</h1> ,
-      <ul>
-          <li><span>Planta: </span><span>{plantData.id}</span></li>
-          <li><span>Temperatura: </span><span>{plantData.temperature}</span></li>
-          <li><span>Luz: </span><span>{plantData.light}</span></li>
-          <li><span>Humedad: </span><span>{plantData.humidity}</span></li>
-          <li><span>Riego: </span><span>{plantData.watering}</span></li>
-      </ul>]
-      :<h1>Loading...</h1>}
-    </div>
-    
-  )
+  if(plantData && plantData.id === props.activePlant){
+    return(
+      <div className="plantData">
+        <img src="" alt="planta"/>
+        <div className="plantData_info">
+          <h1 className="plantData_title">Planta {props.activePlant}</h1>
+          <ul className="plantData_list">
+              <p>Planta: {plantData.id}</p>
+              <p>Temperatura: {plantData.temperature}</p>
+              <p>Luz: {plantData.light}</p>
+              <p>Humedad: {plantData.humidity}</p>
+              <p>Riego: {plantData.watering}</p>
+          </ul>
+        </div>
+      </div>
+    );
+  }else{
+    return(<h1 className="loading">Loading...</h1>)
+  }
 };
 
 export default PlantInfo;

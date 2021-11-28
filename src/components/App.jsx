@@ -10,10 +10,11 @@ const App = () => {
     }
 
     return(
-        <div>
+        [<h1 className="Plantas" key="1">Plantas:</h1>,
+        <div key="2">
             <Navbar activePlant={active} setActivePlant={changePlant}></Navbar>
             <PlantInfo activePlant={active} className={`Planta${active}`}></PlantInfo>
-        </div>
+        </div>]
     )
 };
 
