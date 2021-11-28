@@ -28,7 +28,10 @@ span {
 }
 
 .Plantas{
-    display: none;
+    padding-top: 1.5rem;
+    font-size: 3rem;
+    text-justify: center;
+    text-align: center;
 }
 
 .Navbar{
@@ -47,7 +50,7 @@ span {
     width: 600px;
     max-width: calc(15%);
     min-height: 3.5rem;
-    padding: 0 1rem;
+    padding: 1rem 1rem;
 
     display: flex;
     justify-content: center;
@@ -72,16 +75,32 @@ span {
     transform: scale(1);
 }
 
-.plantData{
-    padding: 3rem;
+.plantInfo{
+    padding-top: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow: hidden;
+    
+}
+.plantInfo_data{
+    padding: 0rem 3rem 3rem 3rem;
 }
 
-.plantData_title{
+.plantInfo_image{
+    padding: 0rem 3rem 3rem 3rem;
+    width: 100%;
+    max-width: 25rem;
+}
+
+.plantInfo_title{
     font-size: 3rem;
+    padding-bottom: 1.5rem;
 }
 
-.plantData_list{
-    font-size: 1.25rem;
+.plantInfo_list{
+    font-size: 1.5rem;
 }
 
 .loading {
@@ -93,23 +112,7 @@ span {
 }
 
 @media only screen and (max-width: 1080px) {
-    .plantData_title{
-        font-family: 'DM Sans', sans-serif;
-        font-weight: bold;
-        font-size: 2rem;
-    }
 
-    .plantData_list{
-        font-size: 1rem;
-    }
-
-    .Plantas{
-        display: block;
-        padding-top: 1.5rem;
-        font-size: 3rem;
-        text-justify: center;
-        text-align: center;
-    }
     .Navbar_button span{
         display: none;
     }
@@ -129,5 +132,24 @@ span {
         font-size: 3rem;
         text-justify: center;
         text-align: center;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    .plantInfo_title{
+        font-family: 'DM Sans', sans-serif;
+        font-weight: bold;
+        font-size: 2rem;
+    }
+
+    .plantInfo_list{
+        font-size: 1rem;
+    }
+    .plantInfo{
+        flex-direction: column;
+    }
+    
+    .plantInfo_image{
+        align-self: center;
     }
 }

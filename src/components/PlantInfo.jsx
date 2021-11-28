@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import getData from "../utils/getData";
+import plantImage from "../assets/images/plant.svg"
 
 const PlantInfo = (props) => {
   const [plantData, setPlantData] = useState();
@@ -20,11 +21,11 @@ const PlantInfo = (props) => {
 
   if(plantData && plantData.id === props.activePlant){
     return(
-      <div className="plantData">
-        <img src="" alt="planta"/>
-        <div className="plantData_info">
-          <h1 className="plantData_title">Planta {props.activePlant}</h1>
-          <ul className="plantData_list">
+      <div className="plantInfo">
+        <img className="plantInfo_image"src={plantImage} alt="planta"/>
+        <div className="plantInfo_data">
+          <h1 className="plantInfo_title">Planta {props.activePlant}</h1>
+          <ul className="plantInfo_list">
               <p>Planta: {plantData.id}</p>
               <p>Temperatura: {plantData.temperature}</p>
               <p>Luz: {plantData.light}</p>
