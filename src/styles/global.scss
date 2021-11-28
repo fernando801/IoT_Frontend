@@ -1,5 +1,6 @@
-$base-color: #c9558f;
+$base-color: white;
 $color: rgba(black, 0.88);
+$plant-green: rgb(0, 134, 0);
 
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@300;500;700&display=swap");
 
@@ -12,7 +13,6 @@ $color: rgba(black, 0.88);
 
 h1{
     font-family: 'DM Sans', sans-serif;
-    font-family: 'DM Sans', sans-serif;
     font-weight: bold;
     font-size: 2rem;
 }
@@ -20,46 +20,49 @@ h1{
 body{
     background-color: $base-color;
     color: $color;
-    
+    font-family: 'DM Sans', sans-serif;
 }
 
-.container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
+span {
+    white-space: pre-wrap;
 }
 
-.mona_china{
-    width: 500px;
-    max-width: calc(100vw - 20px);
-}
-
-.button{
+.Navbar{
     display: flex;
     align-items: center;
+    justify-content: space-around;
+    padding: 1.5rem 1rem;
+}
+
+.Navbar_button{
+
+    width: 600px;
+    max-width: calc(15%);
+    min-height: 3.5rem;
+    padding: 0 1rem;
+
+    display: flex;
     justify-content: center;
-    padding: 10px;
+    align-items: center;
+
+    box-shadow: 0 0 10px black;
     border: none;
     border-radius: 100px;
-    margin: 8vh 0;
     background-color: white;
     font-family: 'DM Sans', sans-serif;
     font-weight: bold;
-    font-size: 2rem;
-    width: 600px;
-    min-height: 100px;
-    max-width: calc(100vw - 20px);
-    box-shadow: 0 0 10px black;
+    font-size: 1.5rem;
     transition: transform .5s, background-color .3s;
 }
 
-.button:hover{
+.Navbar_button:hover{
     transform: scale(1.1);
+    background-color: $plant-green;
+    color: white;
 }
 
-.button:active{
-    background-color: rgb(24, 122, 250);
+.Navbar_button:active{
+    background-color: $plant-green;
     color: white;
     transform: scale(1);
 }
@@ -73,12 +76,15 @@ body{
     padding: 0 10%;
 }
 
-@media only screen and (max-width: 600px) {
-    .button:hover{
+@media only screen and (max-width: 890px) {
+    .Navbar_button span{
+        display: none;
+    }
+    .Navbar_button:hover{
         transform: scale(1);
     }
     
-    .button:active{
+    .Navbar_button:active{
         transform: scale(0.9);
     }
 
