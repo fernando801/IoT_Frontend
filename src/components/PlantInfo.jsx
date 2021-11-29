@@ -3,34 +3,42 @@ import getData from "../utils/getData";
 import plantImage from "../assets/images/plant.svg"
 
 const PlantInfo = (props) => {
-  const [plantData, setPlantData] = useState();
+  // const [plantData, setPlantData] = useState();
 
-  useEffect(() => {
-    const updateData = async () => {
-      console.log(props.activePlant);
-      const data = await getData(props.activePlant);
-      setPlantData(data);
-      return updateData;
-    }
+  let timerId;
 
-    const timerId = setInterval(updateData, 500);
-    return function cleanup() {
-      clearInterval(timerId);
-    };
-  }, [props.activePlant]);
+  // useEffect(async() => {
+  //   console.log(`clearing timer id ${timerId}`);
+  //   clearInterval(timerId);
+    
+  //   const updateData = async () => {
+  //     console.log(props.activePlant);
+  //     const data = await getData(props.activePlant);
+  //     setPlantData(data);
+  //   }
+  //   await updateData();
+  //   // setTimeout(updateData,5000);
+  //   timerId = setInterval(updateData, 5000);
+  //   console.log(timerId);
+  //   return function cleanup() {
+  //     console.log('Se fue');
+  //     clearInterval(timerId);
+  //   };
+  // }, [props.activePlant]);
 
-  if(plantData && plantData.id === props.activePlant){
+  if(props.data){
     return(
       <div className="plantInfo">
         <img className="plantInfo_image"src={plantImage} alt="planta"/>
         <div className="plantInfo_data">
           <h1 className="plantInfo_title">Planta {props.activePlant}</h1>
           <ul className="plantInfo_list">
-              <p>Planta: {plantData.id}</p>
-              <p>Temperatura: {plantData.temperature}</p>
-              <p>Luz: {plantData.light}</p>
-              <p>Humedad: {plantData.humidity}</p>
-              <p>Riego: {plantData.watering}</p>
+              <p>Planta: {props.data.planta}</p>
+              <p>Temperatura: {props.data.temperatura.toFixed(2)} °C</p>
+              <p>Luz: {props.data.iluminacion}</p>
+              <p>Humedad: {props.data.humedad}</p>
+              <p>Riego: {props.data.regando}</p>
+              <p>Tiempo: {props.data.tiempo}</p>
           </ul>
         </div>
       </div>
