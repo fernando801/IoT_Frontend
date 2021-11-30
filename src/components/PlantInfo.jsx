@@ -11,6 +11,7 @@ import pImg6 from "../assets/images/plant6.svg"
 const PlantInfo = (props) => {
 
   const plantImages = [pImg0, pImg1, pImg2, pImg3, pImg4, pImg5, pImg6];
+  const owners = ['', 'Omar', 'Fer', 'Charly', 'Hlib', 'Richi', 'Darío']
 
   if(props.data){
     return(
@@ -19,12 +20,12 @@ const PlantInfo = (props) => {
         <div className="plantInfo_data">
           <h1 className="plantInfo_title">Planta {props.activePlant}</h1>
           <ul className="plantInfo_list">
-              <p>Planta: {props.data[0].planta}</p>
+              <p>Dueño: {owners[props.data[0].planta]}</p>
               <p>Temperatura: {props.data[0].temperatura.toFixed(2)} °C</p>
               <p>Luz: {props.data[0].iluminacion === 1? 'Con Luz' : 'Sin Luz'}</p>
               <p>Humedad: {props.data[0].humedad === 1? 'Humedo' : 'Seco'}</p>
               <p>Regando: {props.data[0].regando === 1? 'Si' : 'No'}</p>
-              <p>Tiempo: {(new Date(props.data[0].tiempo)).toLocaleDateString()} {(new Date(props.data[0].tiempo)).toLocaleTimeString()}</p>
+              <p>Ultima Actualización: {(new Date(props.data[0].tiempo)).toLocaleDateString()} {(new Date(props.data[0].tiempo)).toLocaleTimeString()}</p>
           </ul>
         </div>
       </div>,
