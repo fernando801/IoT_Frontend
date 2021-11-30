@@ -28,7 +28,7 @@ span {
 }
 
 .Plantas{
-    padding-top: 1.5rem;
+    padding: 1.5rem 0;
     font-size: 3rem;
     text-justify: center;
     text-align: center;
@@ -103,6 +103,55 @@ span {
     font-size: 1.5rem;
 }
 
+.plantInfo_recientes{
+    display: flex;
+    justify-content: center;
+    padding: 0 3rem 3rem 3rem;
+}
+
+.tableContainer {
+    display: flex;
+    flex-wrap: nowrap; 
+    flex-direction: column;
+    align-items: center;
+    padding: 0 3rem;
+}
+
+.tableContainer h1{
+    padding-bottom: 2rem;
+}
+
+.tableContainer div{
+    padding: 5px;
+}
+
+table {
+    display: table;
+    border-collapse: collapse;
+    text-indent: initial;
+    overflow: hidden;
+    box-shadow: 0 0 5px black;
+    border-radius: 1rem;
+    border-spacing: 2px;
+    border: none;
+}
+
+table td {
+    padding: 0.25rem;
+    box-shadow: 0 0 2px black;
+}
+
+table thead{
+    color: black;
+    text-align: center;
+    font-weight: 500;
+}
+
+table tbody{
+    color: black;
+    text-align: center;
+}
+
 .loading {
     font-family: 'DM Sans', sans-serif;
     font-weight: bold;
@@ -135,7 +184,7 @@ span {
     }
 }
 
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 890px) {
     .plantInfo_title{
         font-family: 'DM Sans', sans-serif;
         font-weight: bold;
@@ -153,3 +202,19 @@ span {
         align-self: center;
     }
 }
+@media only screen and (max-width: 640px) {
+    .plantInfo_recientes{
+        justify-content: flex-start;
+    }
+
+    .tableContainer{
+        align-items: flex-start;
+        overflow-x: scroll;
+        flex-wrap: nowrap;
+    }
+
+    .tableContainer div{
+        overflow-x: scroll;
+    }
+}
+
